@@ -54,7 +54,7 @@ func (us *UserService) GetUser(w http.ResponseWriter, r *http.Request) {
 
 	u, err := us.dao.GetUser(id)
 	if err != nil {
-		fmt.Fprintf(w, "error: %s", err.Error())
+		fmt.Fprintf(w, "error: %s\r\n", err.Error())
 		return
 	}
 	json.NewEncoder(w).Encode(u)
